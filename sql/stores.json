@@ -1,0 +1,212 @@
+[
+  {
+    "storeCode"        : "CT01",
+    "storeName"        : "Cape Town CBD",
+    "division"         : "Hypermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 25
+  },
+  {
+    "storeCode"        : "CT02",
+    "storeName"        : "Canal Walk",
+    "division"         : "Supermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 12
+  },
+  {
+    "storeCode"        : "CT03",
+    "storeName"        : "Somerset Mall",
+    "division"         : "Local",
+    "province"         : "Western Cape",
+    "overduePlanograms": 8
+  },
+  {
+    "storeCode"        : "CT04",
+    "storeName"        : "Tygervalley",
+    "division"         : "Hypermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 31
+  },
+  {
+    "storeCode"        : "CT05",
+    "storeName"        : "Table View",
+    "division"         : "Supermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 14
+  },
+  {
+    "storeCode"        : "CT06",
+    "storeName"        : "Claremont",
+    "division"         : "Local",
+    "province"         : "Western Cape",
+    "overduePlanograms": 5
+  },
+  {
+    "storeCode"        : "CT07",
+    "storeName"        : "George",
+    "division"         : "Hypermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 19
+  },
+  {
+    "storeCode"        : "CT08",
+    "storeName"        : "Paarl",
+    "division"         : "Supermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 11
+  },
+  {
+    "storeCode"        : "CT09",
+    "storeName"        : "Stellenbosch",
+    "division"         : "Local",
+    "province"         : "Western Cape",
+    "overduePlanograms": 6
+  },
+  {
+    "storeCode"        : "CT10",
+    "storeName"        : "Mossel Bay",
+    "division"         : "Hypermarket",
+    "province"         : "Western Cape",
+    "overduePlanograms": 27
+  },
+  {
+    "storeCode"        : "GP01",
+    "storeName"        : "Sandton",
+    "division"         : "Hypermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 7
+  },
+  {
+    "storeCode"        : "GP02",
+    "storeName"        : "Rosebank",
+    "division"         : "Supermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 18
+  },
+  {
+    "storeCode"        : "GP03",
+    "storeName"        : "Midrand",
+    "division"         : "Local",
+    "province"         : "Gauteng",
+    "overduePlanograms": 9
+  },
+  {
+    "storeCode"        : "GP04",
+    "storeName"        : "Centurion",
+    "division"         : "Hypermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 22
+  },
+  {
+    "storeCode"        : "GP05",
+    "storeName"        : "Fourways",
+    "division"         : "Supermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 16
+  },
+  {
+    "storeCode"        : "GP06",
+    "storeName"        : "Kempton Park",
+    "division"         : "Local",
+    "province"         : "Gauteng",
+    "overduePlanograms": 4
+  },
+  {
+    "storeCode"        : "GP07",
+    "storeName"        : "Pretoria East",
+    "division"         : "Hypermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 29
+  },
+  {
+    "storeCode"        : "GP08",
+    "storeName"        : "Randburg",
+    "division"         : "Supermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 13
+  },
+  {
+    "storeCode"        : "GP09",
+    "storeName"        : "Benoni",
+    "division"         : "Local",
+    "province"         : "Gauteng",
+    "overduePlanograms": 10
+  },
+  {
+    "storeCode"        : "GP10",
+    "storeName"        : "Alberton",
+    "division"         : "Hypermarket",
+    "province"         : "Gauteng",
+    "overduePlanograms": 24
+  },
+  {
+    "storeCode"        : "RM01",
+    "storeName"        : "Durban Gateway",
+    "division"         : "Hypermarket",
+    "province"         : "KwaZulu-Natal",
+    "overduePlanograms": 20
+  },
+  {
+    "storeCode"        : "RM02",
+    "storeName"        : "Umhlanga",
+    "division"         : "Supermarket",
+    "province"         : "KwaZulu-Natal",
+    "overduePlanograms": 15
+  },
+  {
+    "storeCode"        : "RM03",
+    "storeName"        : "Pietermaritzburg",
+    "division"         : "Local",
+    "province"         : "KwaZulu-Natal",
+    "overduePlanograms": 3
+  },
+  {
+    "storeCode"        : "RM04",
+    "storeName"        : "Port Elizabeth",
+    "division"         : "Hypermarket",
+    "province"         : "Eastern Cape",
+    "overduePlanograms": 17
+  },
+  {
+    "storeCode"        : "RM05",
+    "storeName"        : "East London",
+    "division"         : "Supermarket",
+    "province"         : "Eastern Cape",
+    "overduePlanograms": 21
+  },
+  {
+    "storeCode"        : "RM06",
+    "storeName"        : "Bloemfontein",
+    "division"         : "Local",
+    "province"         : "Free State",
+    "overduePlanograms": 8
+  },
+  {
+    "storeCode"        : "RM07",
+    "storeName"        : "Polokwane",
+    "division"         : "Hypermarket",
+    "province"         : "Limpopo",
+    "overduePlanograms": 26
+  },
+  {
+    "storeCode"        : "RM08",
+    "storeName"        : "Nelspruit",
+    "division"         : "Supermarket",
+    "province"         : "Mpumalanga",
+    "overduePlanograms": 14
+  },
+  {
+    "storeCode"        : "RM09",
+    "storeName"        : "Kimberley",
+    "division"         : "Local",
+    "province"         : "Northern Cape",
+    "overduePlanograms": 2
+  },
+  {
+    "storeCode"        : "RM10",
+    "storeName"        : "Rustenburg",
+    "division"         : "Hypermarket",
+    "province"         : "North West",
+    "overduePlanograms": 23
+  }
+]
