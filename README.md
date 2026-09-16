@@ -41,6 +41,8 @@ A responsive store dashboard built with an **ASP.NET Core Web API** backend and 
 
 ## Test Accounts
 
-Username - **National_Manager**	| Password - **SeeAllStores**
-Username - **WC_Manager**		| Password - **CapeTown123**
-Username - **GP_Manager**		| Password - **Joburg456**
+| Username | Password |
+| :--- | :--- |
+| `National_Manager` | `SeeAllStores` |
+| `WC_Manager` | `CapeTown123`
+| `GP_Manager` | `Joburg456`
