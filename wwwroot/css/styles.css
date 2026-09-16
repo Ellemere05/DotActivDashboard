@@ -1,0 +1,214 @@
+﻿:root {
+    --da-navy: #0B1044;
+    --da-navy-dark: #121f5b;
+    --da-accent-red: #900;
+    --da-bg-gray: #f4f6fb;
+    --da-border-gray: #e2e8f0;
+    --da-error: #c02b0a;
+    --da-error-background: rgba(192, 43, 10, 0.1);
+    --da-border-dark: #2b2d42;
+    --da-slate-card: #ffffff;
+}
+
+body {
+    background-color: var(--da-bg-gray);
+    font-family: Poppins, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--da-border-dark);
+}
+
+/* GLOBAL CSS */
+
+.brand-logo {
+    height: 42px;
+}
+
+.btn-da {
+    background-color: var(--da-accent-red);
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-da:hover {
+    background-color: var(--da-navy);
+    color: #ffffff;
+}
+
+.btn-da:disabled {
+    background-color: var(--da-accent-red);
+    color: #ffffff;
+    opacity: 0.65;
+    border: none;
+}
+
+.form-floating-da {
+    margin-bottom: 1.75rem;
+}
+
+.form-label-da {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--da-navy);
+    margin-bottom: 0.35rem;
+    display: block;
+}
+
+.form-label-da .req-star {
+    color: var(--da-accent-red) !important;
+    margin-left: 2px;
+}
+
+.input-underline {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid var(--da-border-dark);
+    background: transparent !important;
+    border-radius: 0;
+    padding: 0.5rem 0.1rem;
+    font-size: 1rem;
+    color: #2b2d42;
+    outline: none;
+    box-shadow: none !important;
+    transition: border-color 0.2s ease;
+}
+
+.input-underline::placeholder {
+    color: #8c93a8;
+    opacity: 0.7;
+}
+
+.input-underline:focus {
+    border-bottom: 2px solid var(--da-navy);
+    background: transparent !important;
+}
+
+.input-underline.is-invalid {
+    border-bottom-color: var(--da-error) !important;
+}
+
+.da-error-banner {
+    background: var(--da-error-background);
+    border-radius: 4px;
+    border: 2px solid var(--da-error);
+    padding: 0.9rem 1.25rem;
+    color: var(--da-error);
+    font-size: 0.92rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.75rem;
+}
+
+.da-error-banner .error-icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--da-error);
+    color: var(--da-error);
+    font-weight: 700;
+    font-size: 0.85rem;
+    margin-right: 0.85rem;
+    flex-shrink: 0;
+}
+
+.da-field-error {
+    color: var(--da-error);
+    font-size: 0.85rem;
+    margin-top: 0.35rem;
+    font-weight: 500;
+}
+
+/* LOGIN PAGE */
+
+.login-page-bg {
+    background: linear-gradient(135deg, #050824 0%, var(--da-navy) 60%, #1e2c7a 100%);
+    min-height: 100vh;
+}
+
+.login-card-website {
+    background-color: var(--da-slate-card);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+    justify-content: center;
+}
+
+/* DASHBOARD PAGE */
+
+.navbar-custom {
+    background-color: #ffffff;
+    border-bottom: 2px solid var(--da-border-gray);
+}
+
+.dashboard-filter-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px rgba(11, 16, 68, 0.06);
+}
+
+.select-underline {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid var(--da-border-dark);
+    background-color: transparent !important;
+    border-radius: 0;
+    padding: 0.5rem 0.1rem;
+    font-size: 0.95rem;
+    color: #2b2d42;
+    outline: none;
+    cursor: pointer;
+}
+
+.select-underline:focus {
+    border-bottom: 2px solid var(--da-navy);
+}
+
+.btn-clear-underline {
+    background: transparent;
+    border: none;
+    border-bottom: 1.5px solid var(--da-border-dark);
+    border-radius: 0;
+    color: #555;
+    padding: 0.5rem 0.5rem 0.4rem 0.5rem;
+}
+
+.btn-clear-underline:hover {
+    color: #000;
+}
+
+.table-portal-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 24px rgba(11, 16, 68, 0.06);
+}
+
+.table-portal thead th {
+    background-color: var(--da-navy);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    white-space: nowrap;
+    border: none;
+}
+
+.table-portal thead th:hover {
+    background-color: var(--da-navy-dark);
+}
+
+.table-portal tbody tr:hover {
+    background-color: #f1f4fd;
+}
+
+.badge-overdue {
+    background-color: #fed7d7;
+    color: #c53030;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    border-radius: 20px;
+}

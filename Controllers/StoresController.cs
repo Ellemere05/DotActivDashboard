@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotActivDashboard.Controllers
 {
+    [Route("api/[controller]")]
     public class StoresController : ControllerBase
     {
         private readonly AppDbContext _context;
@@ -13,6 +14,7 @@ namespace DotActivDashboard.Controllers
             _context = context;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetStores([FromHeader(Name = "X-User-Id")] int userId)
         {
             if (userId <= 0)

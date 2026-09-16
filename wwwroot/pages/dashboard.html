@@ -1,0 +1,139 @@
+﻿<nav class="navbar navbar-expand-lg navbar-custom px-3 px-md-4 py-2 sticky-top shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand d-flex align-items-center" href="#!/dashboard">
+            <img src="assets/images/DotActiv-Logo cropped.png" alt="DotActiv Logo" class="brand-logo me-2" style="max-height: 38px;">
+        </a>
+
+        <div class="d-flex align-items-center ms-auto">
+            <div class="text-end me-3 d-none d-sm-block">
+                <div class="fw-bold small" style="color: var(--da-navy);">{{ currentUser.username }}</div>
+                <span class="badge bg-light text-primary border border-primary-subtle" style="font-size: 0.75rem;">
+                    {{ currentUser.roleName }}
+                </span>
+            </div>
+            <button class="btn btn-outline-danger btn-sm px-3" ng-click="logout()">
+                <i class="bi bi-box-arrow-right me-1"></i> Log Out
+            </button>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid px-3 px-md-5 py-4">
+
+    <div class="row mb-4 align-items-center">
+        <div class="col-md-6">
+            <h3 class="fw-bold mb-1" style="color: var(--da-navy);">Store Directory</h3>
+            <p class="text-muted small mb-0">
+                Viewing stores assigned to your role: <strong>{{ currentUser.province || 'National (All Provinces)' }}</strong>
+            </p>
+        </div>
+        <div class="col-md-6 text-md-end mt-3 mt-md-0">
+            <span class="badge bg-white text-secondary p-2 shadow-sm border">
+                Showing <strong>{{ (stores | filter:customFilter).length }}</strong> of <strong>{{ stores.length }}</strong> Stores
+            </span>
+        </div>
+    </div>
+
+    <div class="dashboard-filter-card p-3 mb-4">
+        <div class="row g-4 align-items-end">
+
+            <div class="col-md-6 col-lg-6">
+                <label class="form-label-da mb-1">Search Stores</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="input-underline" placeholder="Search by name, code, division or province..."
+                           ng-model="searchTerm">
+                    <button class="btn btn-clear-underline" type="button" ng-if="searchTerm" ng-click="searchTerm = ''">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="form-label-da mb-1">Filter by Division</label>
+                <select class="select-underline" ng-model="selectedDivision">
+                    <option value="">All Divisions</option>
+                    <option ng-repeat="div in divisions" value="{{ div }}">{{ div }}</option>
+                </select>
+            </div>
+
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <label class="form-label-da mb-1">Filter by Province</label>
+                <select class="select-underline" ng-model="selectedProvince">
+                    <option value="">All Visible Provinces</option>
+                    <option ng-repeat="prov in provinces" value="{{ prov }}">{{ prov }}</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="table-portal-card overflow-hidden">
+
+        <div class="text-center py-5" ng-if="isLoading">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading stores...</span>
+            </div>
+            <p class="text-muted small mt-2">Loading store records from database...</p>
+        </div>
+
+        <div class="alert alert-danger m-4" ng-if="errorMessage && !isLoading">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ errorMessage }}
+        </div>
+
+        <div class="table-responsive" ng-if="!isLoading && !errorMessage">
+            <table class="table table-portal table-hover align-middle mb-0">
+                <thead>
+                    <tr>
+                        <th ng-click="sortBy('sStoreCode')">
+                            Store Code
+                            <i class="bi ms-1" ng-class="{'bi-arrow-up': sortColumn === 'sStoreCode' && !reverseSort, 'bi-arrow-down': sortColumn === 'sStoreCode' && reverseSort, 'bi-arrow-down-up opacity-50': sortColumn !== 'sStoreCode'}"></i>
+                        </th>
+                        <th ng-click="sortBy('sStoreName')">
+                            Store Name
+                            <i class="bi ms-1" ng-class="{'bi-arrow-up': sortColumn === 'sStoreName' && !reverseSort, 'bi-arrow-down': sortColumn === 'sStoreName' && reverseSort, 'bi-arrow-down-up opacity-50': sortColumn !== 'sStoreName'}"></i>
+                        </th>
+                        <th ng-click="sortBy('sDivision')">
+                            Division
+                            <i class="bi ms-1" ng-class="{'bi-arrow-up': sortColumn === 'sDivision' && !reverseSort, 'bi-arrow-down': sortColumn === 'sDivision' && reverseSort, 'bi-arrow-down-up opacity-50': sortColumn !== 'sDivision'}"></i>
+                        </th>
+                        <th ng-click="sortBy('sProvince')">
+                            Province
+                            <i class="bi ms-1" ng-class="{'bi-arrow-up': sortColumn === 'sProvince' && !reverseSort, 'bi-arrow-down': sortColumn === 'sProvince' && reverseSort, 'bi-arrow-down-up opacity-50': sortColumn !== 'sProvince'}"></i>
+                        </th>
+                        <th class="text-center" ng-click="sortBy('iOverduePlanograms')">
+                            Overdue Planograms
+                            <i class="bi ms-1" ng-class="{'bi-arrow-up': sortColumn === 'iOverduePlanograms' && !reverseSort, 'bi-arrow-down': sortColumn === 'iOverduePlanograms' && reverseSort, 'bi-arrow-down-up opacity-50': sortColumn !== 'iOverduePlanograms'}"></i>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="store in stores | filter:customFilter | orderBy:sortColumn:reverseSort">
+                        <td class="fw-semibold">{{ store.sStoreCode }}</td>
+                        <td>{{ store.sStoreName }}</td>
+                        <td>
+                            <span class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill px-2 py-1">
+                                {{ store.sDivision }}
+                            </span>
+                        </td>
+                        <td>{{ store.sProvince }}</td>
+                        <td class="text-center">
+                            <span class="badge-overdue" ng-if="store.iOverduePlanograms > 0">
+                                {{ store.iOverduePlanograms }} days
+                            </span>
+                            <span class="text-muted small" ng-if="store.iOverduePlanograms === 0">
+                                0 days
+                            </span>
+                        </td>
+                    </tr>
+                    <tr ng-if="(stores | filter:customFilter).length === 0">
+                        <td colspan="5" class="text-center py-4 text-muted">
+                            <i class="bi bi-inbox fs-3 d-block mb-1"></i>
+                            No stores match your search or filter criteria.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

@@ -43,7 +43,7 @@ INSERT INTO tRoles (sRoleName, sProvince) VALUES
 
 INSERT INTO tUsers (sUsername, sPassword, fkRoleId) VALUES
 ('National_Manager', 'SeeAllStores', 1),
-('Western Cape_Manager', 'CapeTownSunshine', 2),
+('WesternCape_Manager', 'CapeTownSunshine', 2),
 ('Gauteng_Manager', 'JoburgGoldReef', 3);
 GO
 

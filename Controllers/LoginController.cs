@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DotActivDashboard.Controllers
 {
+    [Route("api/auth")]
     public class LoginController : ControllerBase    
     {
         private readonly AppDbContext _context;
@@ -15,7 +16,8 @@ namespace DotActivDashboard.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Login(LoginRequestDTO loginRequest)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequestDTO loginRequest)
         {
             if (string.IsNullOrWhiteSpace(loginRequest.Username) || string.IsNullOrWhiteSpace(loginRequest.Password))
             {
